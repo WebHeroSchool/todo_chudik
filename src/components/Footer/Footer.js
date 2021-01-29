@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Footer = () => (<div>
+const Footer = ({ count }) => (<div>
     <button >Все</button>
-    <button>Активные</button>
+    <button>Активные { count }</button>
     <button>Выполненные</button>
 </div>);
 
