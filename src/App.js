@@ -1,8 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
+import { count, len } from './numbers.js';
 
 const flag = false;
-const count = 32;
+const number = 32;
 
 function App() {
   return (
@@ -16,11 +17,12 @@ function App() {
           fontSize: 50
         }}>
           <h3>Hello mentor!</h3>
-          <p>{count}</p>
+          <p>{number}</p>
           <p>{45}</p>
           <p>{2 + 4}</p>
           <p>{flag && 'Flag is true'}</p>
           <p>{flag ? 'Flag is true' : 'Flag is false'}</p>
+          <p>{'count * length ='} {count * len}</p>
           {undefined}
           {null}
           {false}
