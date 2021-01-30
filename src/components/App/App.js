@@ -9,13 +9,16 @@ import styles from './App.module.css';
 const App = () => {
   const items = [
     {
-      value: 'Написать приложение'
+      value: 'Написать приложение',
+      isDone: false
     },
     {
-      value: 'Прописать props'
+      value: 'Прописать props',
+      isDone: true
     },
     {
-      value: 'Сдать задание на проверку'
+      value: 'Сдать задание на проверку',
+      isDone: false
     }
   ]
 
