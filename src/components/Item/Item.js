@@ -6,12 +6,12 @@ import IconButton from '@material-ui/core/IconButton';
 import Tooltip from '@material-ui/core/Tooltip';
 import styles from './Item.module.css';
 
-const Item = ({ value, isDone }) => (<div className={styles.grid}>
+const Item = ({ value, isDone, onClickDone, id }) => (<div className={styles.grid}>
   <div className={styles.checkbox}>
     <Checkbox
-      defaultChecked
       color="primary"
-      inputProps={{ 'aria-label': 'secondary checkbox' }}
+      inputProps={{ 'aria-label': 'uncontrolled-checkbox' }}
+      onClick={() => onClickDone(id)}
     />
   </div>
   <div className={
