@@ -6,7 +6,7 @@ import IconButton from '@material-ui/core/IconButton';
 import Tooltip from '@material-ui/core/Tooltip';
 import styles from './Item.module.css';
 
-const Item = ({ value, isDone, onClickDone, id }) => (<div className={styles.grid}>
+const Item = ({ value, isDone, onClickDone, onClickDelete, id }) => (<div className={styles.grid}>
   <div className={styles.checkbox}>
     <Checkbox
       color="primary"
@@ -23,10 +23,10 @@ const Item = ({ value, isDone, onClickDone, id }) => (<div className={styles.gri
     {value}
   </div>
   <Tooltip title="Delete">
-        <IconButton aria-label="delete">
-          <DeleteIcon />
-        </IconButton>
-      </Tooltip>
+    <IconButton aria-label="delete">
+      <DeleteIcon onClick={() => onClickDelete(id)} />
+    </IconButton>
+  </Tooltip>
 </div>);
 
 export default Item;

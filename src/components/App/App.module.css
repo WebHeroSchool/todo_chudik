@@ -3,7 +3,8 @@
 .wrap {
   font-family: Roboto;
   font-weight: 700;
-  margin: auto;
+  margin: 30px auto;
   width: 500px;
   color: darkblue;
+  padding: 10px;
 }
