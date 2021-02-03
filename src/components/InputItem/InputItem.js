@@ -12,24 +12,18 @@ class InputItem extends React.Component {
   onButtonClick = () => {
     if (this.state.inputValue !== '') {
       this.setState({
-          inputValue: '',
-          errorMessage: '',
-          isError: false
+        inputValue: '',
+        errorMessage: '',
+        isError: false
       });
       this.props.onClickAdd(this.state.inputValue);
     } else {
-        this.setState({
-            errorMessage: 'Ошибка! Поле пустое. Добавьте дело.',
-            isError: true
-        })
+      this.setState({
+        errorMessage: 'Ошибка! Поле пустое. Добавьте дело.',
+        isError: true
+      })
     }
   }
-
-  getSnapshotBeforeUpdate(value) {
-    if (value !== '') {
-      console.log('getSnapshotBeforeUpdate');
-    }
-  };
 
   render() {
     return (<div>
