@@ -22,9 +22,9 @@ const Item = ({ value, isDone, onClickDone, onClickDelete, id }) => (<div classN
     }>
     {value}
   </div>
-  <Tooltip title="Delete">
+  <Tooltip onClick={() => onClickDelete(id)} title="Delete">
     <IconButton aria-label="delete">
-      <DeleteIcon onClick={() => onClickDelete(id)} />
+      <DeleteIcon />
     </IconButton>
   </Tooltip>
 </div>);
