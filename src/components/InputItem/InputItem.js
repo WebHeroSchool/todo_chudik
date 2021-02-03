@@ -25,6 +25,12 @@ class InputItem extends React.Component {
     }
   }
 
+  getSnapshotBeforeUpdate(value) {
+    if (value !== '') {
+      console.log('getSnapshotBeforeUpdate');
+    }
+  };
+
   render() {
     return (<div>
       <TextField
