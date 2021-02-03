@@ -25,10 +25,6 @@ class InputItem extends React.Component {
     }
   }
 
-  changeToUppercase = event => {
-    this.setState({ inputValue: event.target.value.toUpperCase()});
-  };
-
   render() {
     return (<div>
       <TextField
