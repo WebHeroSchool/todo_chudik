@@ -1,5 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
+import PropTypes from 'prop-types';
 import Checkbox from '@material-ui/core/Checkbox';
 import DeleteIcon from '@material-ui/icons/Delete';
 import IconButton from '@material-ui/core/IconButton';
@@ -29,8 +30,8 @@ const Item = ({ value, isDone, onClickDone, onClickDelete, id }) => (<div classN
   </Tooltip>
 </div>);
 
-Item.defaultProps = {
-  isDone: false
+Item.propTypes = {
+  isDone: PropTypes.bool.isRequired
 };
 
 export default Item;
