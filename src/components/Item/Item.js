@@ -29,4 +29,8 @@ const Item = ({ value, isDone, onClickDone, onClickDelete, id }) => (<div classN
   </Tooltip>
 </div>);
 
+Item.defaultProps = {
+  isDone: false
+};
+
 export default Item;

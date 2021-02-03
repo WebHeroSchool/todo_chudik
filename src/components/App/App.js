@@ -66,7 +66,7 @@ class App extends React.Component {
           onClickDone={this.onClickDone}
           onClickDelete={this.onClickDelete}
         />
-        < Footer count={this.state.count} />
+        < Footer />
       </div>
     );
   }
