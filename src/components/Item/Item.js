@@ -9,22 +9,11 @@ import styles from './Item.module.css';
 
 class Item extends React.Component {
   componentDidMount() {
-    console.log('componentDidMount');
+    this.timerID = setInterval(() => console.log('componentDidMount'), 1000);
   }
 
-  static getDerivedStateFromProps() {
-    console.log('getDerivedStateFromProps');
-  }
-
-  shouldComponentUpdate() {
-    console.log('shouldComponentUpdate');
-  }
-
-  componentDidUpdate() {
-    console.log('componentDidUpdate');
-  }
   componentWillUnmount() {
-    console.log('componentWillUnmount');
+    clearInterval(this.timerID);
   }
 
   render() {
