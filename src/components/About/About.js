@@ -1,9 +1,11 @@
 import React from 'react';
 
-const About = () => {
-  <div>
-    <h1>Обо мне</h1>
+import styles from './About.module.css';
+
+const About = () => (
+  <div className={styles.wrap}>
+    <h1>Обо мне:</h1>
   </div>
-}
+  )
 
 export default About
