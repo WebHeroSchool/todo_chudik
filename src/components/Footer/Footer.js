@@ -6,8 +6,8 @@ import styles from './Footer.module.css'
 
 const Footer = ({ count }) => (<div className={styles.boxButton}>
     <ButtonGroup color="primary" aria-label="outlined primary button group">
-        <Button>Все {count}</Button>
-        <Button>Активные</Button>
+        <Button>Все</Button>
+        <Button>Активные {count}</Button>
         <Button>Выполненные</Button>
     </ButtonGroup>
 </div>);
