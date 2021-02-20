@@ -8,3 +8,23 @@
   color: darkblue;
   padding: 10px;
 }
+
+.title {
+  color: darkblue;
+  margin-left: 15px;
+}
+
+.sidebar {
+  grid-area: sidebar;
+}
+
+.content {
+  grid-area: content;
+}
+
+.link {
+  text-decoration: none;
+  color: darkblue;
+  font-weight: bold;
+  cursor: pointer;
+}
