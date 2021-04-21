@@ -1,51 +1,60 @@
 import React from 'react';
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
+import classnames from 'classnames';
+import styles from './InputItem.module.css';
+import buttonImg from './img/add.svg';
 
 class InputItem extends React.Component {
   state = {
     inputValue: '',
-    errorMessage: '',
-    isError: false
+    error: false,
+    repeat: false
   };
 
-  onButtonClick = () => {
-    if (this.state.inputValue !== '') {
+  onSubmit = (event) => {
+    event.preventDefault();
+
+    if (this.state.inputValue === '') {
       this.setState({
-        inputValue: '',
-        errorMessage: '',
-        isError: false
-      });
-      this.props.onClickAdd(this.state.inputValue);
+          error: true,
+          repeat: false
+      })
+    } else if (this.props.items.find(item => item.value === this.state.inputValue)) {
+      this.setState({
+          repeat: true
+      })
     } else {
       this.setState({
-        errorMessage: 'Ошибка! Поле пустое. Добавьте дело.',
-        isError: true
+          inputValue: '',
+          error: false,
+          repeat: false
       })
+      this.props.onClickAdd(this.state.inputValue);
     }
   }
 
   render() {
-    return (<div>
-      <TextField
-        id="standard-dense"
-        label="Добавьте задание"
-        fullWidth
-        margin="dense"
-        helperText={this.state.errorMessage}
-        value={this.state.inputValue}
-        onChange={event => this.setState({ inputValue: event.target.value.toUpperCase() })}
-      />
-      <Button 
-        variant="contained"
-        color="primary"
-        fullWidth
-        onClick={this.onButtonClick}
-      >
-        Добавить
-      </Button>
-    </div>);
+    const { onClickAdd, items } = this.props;
+
+    return (
+      <form
+        onSubmit={this.onSubmit}
+        className={classnames({
+          [styles.form]: true,
+          [styles.error]: this.state.error,
+          [styles.repeat]: this.state.repeat
+        })}>
+        <input 
+          type='text'
+          placeholder={'Просто введите сюда название дела...'}
+          value={this.state.inputValue}
+          onChange={event => this.setState({inputValue: event.target.value})}
+          className={styles.input}
+        />
+        <button className={styles.btn}>
+          <img src={buttonImg} alt='Button'/>
+        </button>
+      </form>);
   }
-}
-  
+};
+
 export default InputItem;
